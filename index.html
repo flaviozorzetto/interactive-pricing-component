@@ -1,39 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Frontend Mentor | Interactive pricing component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+  <title>Frontend Mentor | Interactive pricing component</title>
+  <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+  <link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-  Simple, traffic-based pricing
-  Sign-up for our 30-day trial. No credit card required. 
-
-  Pageviews
-  $ /month
-
-  Monthly Billing
-  Yearly Billing 25% discount
-
-  Unlimited websites
-  100% data ownership
-  Email reports
-
-  Start my trial
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+  <div class="flex relative flex-column title-container">
+    <img src="images/pattern-circles.svg" alt="" class="title-background-image">
+    <h1>Simple, traffic-based pricing</h1>
+    <div class="flex subtitle-container">
+      <p>Sign-up for our 30-day trial.</p>
+      <p>No credit card required.</p>
+    </div>
   </div>
+
+  <div class="flex flex-column main-container">
+    <div class="billing-info">
+      <p style="text-transform: uppercase; letter-spacing: 2px;">
+        <span id="pageviews">100K</span> Pageviews
+      </p>
+      <div class="flex align-center">
+        <span id="pricing">$16.00</span>
+        <p>/month</p>
+      </div>
+
+      <div class="slide-container">
+        <input type="range" min="1" max="100" value="50" class="dragabo-slider" id="myRange">
+        <div class="slide-bar"></div>
+      </div>
+    </div>
+    <div class="flex flex-end select-billing">
+      <p>Monthly Billing</p>
+      <label class="switch">
+        <input type="checkbox" id="billing">
+        <span class="slider"></span>
+      </label>
+      <p>Yearly Billing</p>
+      <p class="discount">25% <span class="hide-in-media">discount</span></p>
+    </div>
+    <div class="separator-line"></div>
+
+    <div class="flex space-between align-center billing-footer">
+      <ul>
+        <li>Unlimited websites</li>
+        <li>100% data ownership</li>
+        <li>Email reports</li>
+      </ul>
+      <a href="#" class="trial"><p>Start my trial</p></a>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,0 +1,324 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --container-width: 650px
+}
+
+body {
+    background-image: url(images/bg-pattern.svg);
+    background-repeat: no-repeat;
+    background-color: hsl(228, 100%, 99%);
+    background-size: 100% 53vh;
+    font-family: 'Manrope', sans-serif;
+}
+
+li {
+    list-style: url(images/icon-check.svg);
+    padding-left: 10px;
+}
+
+.background {
+    width: 100%;
+}
+
+.flex {
+    display: flex;
+}
+
+.flex-end {
+    justify-content: end;
+}
+
+.relative {
+    position: relative;
+}
+
+.flex-column {
+    flex-flow: column;
+}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.align-center {
+    align-items: center;
+}
+
+.title-container {
+    align-items: center;
+    margin-top: 90px;
+}
+
+.title-container h1 {
+    color: hsl(227, 35%, 25%);
+    font-weight: 800;
+    margin-bottom: 10px;
+}
+
+.title-container p {
+    color: hsl(225, 20%, 60%);
+    font-weight: 600;
+}
+
+.title-background-image {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    width: 160px;
+    transform: translateX(-50%);
+    z-index: -1;
+}
+
+.subtitle-container {
+    align-items: center;
+}
+
+.subtitle-container > p {
+    margin-right: 5px;
+}
+
+.main-container {
+    position: relative;
+    background-color: white;
+    color: hsl(225, 20%, 60%);
+    margin: auto;
+    margin-top: 100px;
+    width: var(--container-width);
+    z-index: 1;
+    border-radius: 10px;
+    box-shadow: 0px 1px 30px 0px rgba(0, 0, 0, 0.055);
+}
+
+.main-container {
+    padding: 30px 50px;
+}
+
+.separator-line {
+    width: var(--container-width);
+    margin: 0 0 0 -50px;
+    height: 1px;
+    background-color: rgb(231, 231, 231);
+}
+
+.select-billing {
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.select-billing > * {
+    margin-left: 20px;
+}
+
+.billing-info {
+    width: 100%;
+    display: flex;
+    flex-flow: wrap row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.slide-container {
+    margin-bottom: 60px;
+    margin-top: 30px;
+}
+
+.billing-footer {
+    margin-top: 30px;
+}
+
+.billing-footer li {
+    margin-bottom: 10px;
+}
+
+.switch {
+    position: relative;
+    width: 50px;
+    height: 25px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider::before {
+    position: absolute;
+    content: "";
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    width: 17px;
+    height: 17px;
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:hover {
+    background-color: hsl(174, 77%, 80%)
+}
+
+input:checked + .slider::before {
+    transform: translateX(24px);
+}
+
+.discount {
+    color: hsl(15, 100%, 70%);
+    background-color: hsl(14, 92%, 95%);
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 12px;
+}
+
+.slide-container {
+    width: 100%;
+    position: relative;
+}
+
+.dragabo-slider {
+    width: 100%;
+    appearance: none;
+}
+
+.dragabo-slider::-webkit-slider-thumb {
+    position: relative;
+    appearance: none;
+    cursor: pointer;
+    width: 45px;
+    height: 45px;
+    background-image: url(images/icon-slider.svg);
+    background-position: center;
+    background-color: hsl(174, 86%, 45%);
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    z-index: 10;
+    top: 3px;
+    box-shadow: 0px 15px 15px 6px hsl(174, 77%, 85%);
+} 
+
+.slide-bar {
+    position: absolute;
+    width: 100%;
+    height: 10px;
+    background: linear-gradient(60deg ,hsl(174, 77%, 85%) 50%,hsl(224, 65%, 95%) 50% );
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 10px;
+    z-index: 5;
+}
+
+#pricing {
+    font-size: 40px;
+    margin-right: 10px;
+    color: hsl(227, 35%, 25%);
+    font-weight: 800;
+}
+
+.trial {
+    text-decoration: none;
+    color: hsl(226, 100%, 87%);
+    background: hsl(227, 35%, 25%);
+    padding: 13px 50px;
+    border-radius: 30px;
+}
+
+.trial:hover {
+    color: rgba(255, 255, 255, 0.89);
+}
+
+@media screen and (max-width: 700px) {
+    li {
+        margin: 0;
+        padding: 0;
+    }
+
+    :root {
+        --container-width: 80vw
+    }
+
+    .title-container > h1{
+        font-size: 25px;
+    }
+
+    .subtitle-container {
+        flex-flow: column;
+    }
+
+    .billing-info {
+        flex-flow: column;
+    }
+
+    .billing-info div {
+        order: 2;
+    }
+
+    .billing-info .slide-container {
+        order: 1;
+        margin-bottom: 20px;
+    }
+
+    .billing-info div:nth-child(2) {
+        margin-bottom: 30px;
+    }
+
+    .select-billing {
+        justify-content: space-around;
+    }
+
+    .select-billing > * {
+        margin-left: 4px;
+        font-size: 10px;
+    }
+
+    .main-container {
+        padding: 30px 30px;
+    }
+
+    .hide-in-media {
+        display: none;
+    }
+
+    .billing-footer {
+        flex-flow: column;
+    }
+
+    .billing-footer li {
+        text-align: center;
+        list-style-position: inside;
+    }
+
+    .billing-footer ul {
+        margin: auto;
+    }
+
+    .trial {
+        margin-top: 30px;
+    }
+
+    .separator-line {
+        margin: 0 0 0 -30px;
+    }
+
+}
